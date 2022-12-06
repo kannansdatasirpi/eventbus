@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <button @click="showPopup =true">Show Popup</button>
+  <PopUp v-show="showPopup" @close="closePopup" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PopUp from './components/PopUp.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PopUp
+  },
+  data(){
+    return{
+      showPopup: false
+    }
+  },
+  methods: {
+    closePopup(name) {
+      this.showPopup = false    //set the data property false hide the component.pass some 
+      console.log('name',name);
+    }
   }
 }
 </script>
