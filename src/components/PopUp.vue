@@ -1,10 +1,9 @@
-<!--passing data parent component to child component, some time you might also want to communicate from child component back to  the parent component this is where custome events -->
-<!--use of $emit. events validation (similar to validating props passed into a child component it is also possible to validate custome events that are emitted from the child component )-->
 <template>
   <div id="event">
     <h2 id="eve">This is PopUp</h2>
     <input type="text" v-model="name" />
     <button id="btn" @click="$emit('close',name)">Close PopUp</button> <!--to emit the event from the child and handle it in the parent component -->
+   
   </div>
 </template>
 
